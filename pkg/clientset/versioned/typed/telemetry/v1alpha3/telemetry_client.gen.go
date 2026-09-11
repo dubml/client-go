@@ -21,8 +21,8 @@ package v1alpha3
 import (
 	http "net/http"
 
-	telemetryv1alpha3 "github.com/kdubbo/client-go/pkg/apis/telemetry/v1alpha3"
-	scheme "github.com/kdubbo/client-go/pkg/clientset/versioned/scheme"
+	telemetryv1alpha3 "github.com/dubml/client-go/pkg/apis/telemetry/v1alpha3"
+	scheme "github.com/dubml/client-go/pkg/clientset/versioned/scheme"
 	rest "k8s.io/client-go/rest"
 )
 

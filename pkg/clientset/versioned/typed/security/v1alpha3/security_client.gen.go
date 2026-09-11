@@ -21,8 +21,8 @@ package v1alpha3
 import (
 	http "net/http"
 
-	securityv1alpha3 "github.com/kdubbo/client-go/pkg/apis/security/v1alpha3"
-	scheme "github.com/kdubbo/client-go/pkg/clientset/versioned/scheme"
+	securityv1alpha3 "github.com/dubml/client-go/pkg/apis/security/v1alpha3"
+	scheme "github.com/dubml/client-go/pkg/clientset/versioned/scheme"
 	rest "k8s.io/client-go/rest"
 )
 

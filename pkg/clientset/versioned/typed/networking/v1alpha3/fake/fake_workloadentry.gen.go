@@ -19,9 +19,9 @@
 package fake
 
 import (
-	v1alpha3 "github.com/kdubbo/client-go/pkg/apis/networking/v1alpha3"
-	networkingv1alpha3 "github.com/kdubbo/client-go/pkg/applyconfiguration/networking/v1alpha3"
-	typednetworkingv1alpha3 "github.com/kdubbo/client-go/pkg/clientset/versioned/typed/networking/v1alpha3"
+	v1alpha3 "github.com/dubml/client-go/pkg/apis/networking/v1alpha3"
+	networkingv1alpha3 "github.com/dubml/client-go/pkg/applyconfiguration/networking/v1alpha3"
+	typednetworkingv1alpha3 "github.com/dubml/client-go/pkg/clientset/versioned/typed/networking/v1alpha3"
 	gentype "k8s.io/client-go/gentype"
 )
 

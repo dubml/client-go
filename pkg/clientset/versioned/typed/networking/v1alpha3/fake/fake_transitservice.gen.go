@@ -25,26 +25,26 @@ import (
 	gentype "k8s.io/client-go/gentype"
 )
 
-// fakeCircuitBreakerPolicies implements CircuitBreakerPolicyInterface
-type fakeCircuitBreakerPolicies struct {
-	*gentype.FakeClientWithListAndApply[*v1alpha3.CircuitBreakerPolicy, *v1alpha3.CircuitBreakerPolicyList, *networkingv1alpha3.CircuitBreakerPolicyApplyConfiguration]
+// fakeTransitServices implements TransitServiceInterface
+type fakeTransitServices struct {
+	*gentype.FakeClientWithListAndApply[*v1alpha3.TransitService, *v1alpha3.TransitServiceList, *networkingv1alpha3.TransitServiceApplyConfiguration]
 	Fake *FakeNetworkingV1alpha3
 }
 
-func newFakeCircuitBreakerPolicies(fake *FakeNetworkingV1alpha3, namespace string) typednetworkingv1alpha3.CircuitBreakerPolicyInterface {
-	return &fakeCircuitBreakerPolicies{
-		gentype.NewFakeClientWithListAndApply[*v1alpha3.CircuitBreakerPolicy, *v1alpha3.CircuitBreakerPolicyList, *networkingv1alpha3.CircuitBreakerPolicyApplyConfiguration](
+func newFakeTransitServices(fake *FakeNetworkingV1alpha3, namespace string) typednetworkingv1alpha3.TransitServiceInterface {
+	return &fakeTransitServices{
+		gentype.NewFakeClientWithListAndApply[*v1alpha3.TransitService, *v1alpha3.TransitServiceList, *networkingv1alpha3.TransitServiceApplyConfiguration](
 			fake.Fake,
 			namespace,
-			v1alpha3.SchemeGroupVersion.WithResource("circuitbreakerpolicies"),
-			v1alpha3.SchemeGroupVersion.WithKind("CircuitBreakerPolicy"),
-			func() *v1alpha3.CircuitBreakerPolicy { return &v1alpha3.CircuitBreakerPolicy{} },
-			func() *v1alpha3.CircuitBreakerPolicyList { return &v1alpha3.CircuitBreakerPolicyList{} },
-			func(dst, src *v1alpha3.CircuitBreakerPolicyList) { dst.ListMeta = src.ListMeta },
-			func(list *v1alpha3.CircuitBreakerPolicyList) []*v1alpha3.CircuitBreakerPolicy {
+			v1alpha3.SchemeGroupVersion.WithResource("transitservices"),
+			v1alpha3.SchemeGroupVersion.WithKind("TransitService"),
+			func() *v1alpha3.TransitService { return &v1alpha3.TransitService{} },
+			func() *v1alpha3.TransitServiceList { return &v1alpha3.TransitServiceList{} },
+			func(dst, src *v1alpha3.TransitServiceList) { dst.ListMeta = src.ListMeta },
+			func(list *v1alpha3.TransitServiceList) []*v1alpha3.TransitService {
 				return list.Items
 			},
-			func(list *v1alpha3.CircuitBreakerPolicyList, items []*v1alpha3.CircuitBreakerPolicy) {
+			func(list *v1alpha3.TransitServiceList, items []*v1alpha3.TransitService) {
 				list.Items = items
 			},
 		),

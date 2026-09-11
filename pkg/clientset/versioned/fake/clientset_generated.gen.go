@@ -19,14 +19,14 @@
 package fake
 
 import (
-	applyconfiguration "github.com/kdubbo/client-go/pkg/applyconfiguration"
-	clientset "github.com/kdubbo/client-go/pkg/clientset/versioned"
-	networkingv1alpha3 "github.com/kdubbo/client-go/pkg/clientset/versioned/typed/networking/v1alpha3"
-	fakenetworkingv1alpha3 "github.com/kdubbo/client-go/pkg/clientset/versioned/typed/networking/v1alpha3/fake"
-	securityv1alpha3 "github.com/kdubbo/client-go/pkg/clientset/versioned/typed/security/v1alpha3"
-	fakesecurityv1alpha3 "github.com/kdubbo/client-go/pkg/clientset/versioned/typed/security/v1alpha3/fake"
-	telemetryv1alpha3 "github.com/kdubbo/client-go/pkg/clientset/versioned/typed/telemetry/v1alpha3"
-	faketelemetryv1alpha3 "github.com/kdubbo/client-go/pkg/clientset/versioned/typed/telemetry/v1alpha3/fake"
+	applyconfiguration "github.com/dubml/client-go/pkg/applyconfiguration"
+	clientset "github.com/dubml/client-go/pkg/clientset/versioned"
+	networkingv1alpha3 "github.com/dubml/client-go/pkg/clientset/versioned/typed/networking/v1alpha3"
+	fakenetworkingv1alpha3 "github.com/dubml/client-go/pkg/clientset/versioned/typed/networking/v1alpha3/fake"
+	securityv1alpha3 "github.com/dubml/client-go/pkg/clientset/versioned/typed/security/v1alpha3"
+	fakesecurityv1alpha3 "github.com/dubml/client-go/pkg/clientset/versioned/typed/security/v1alpha3/fake"
+	telemetryv1alpha3 "github.com/dubml/client-go/pkg/clientset/versioned/typed/telemetry/v1alpha3"
+	faketelemetryv1alpha3 "github.com/dubml/client-go/pkg/clientset/versioned/typed/telemetry/v1alpha3/fake"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"

@@ -19,7 +19,7 @@
 package v1alpha3
 
 import (
-	securityv1alpha3 "github.com/kdubbo/client-go/pkg/apis/security/v1alpha3"
+	securityv1alpha3 "github.com/dubml/client-go/pkg/apis/security/v1alpha3"
 	labels "k8s.io/apimachinery/pkg/labels"
 	listers "k8s.io/client-go/listers"
 	cache "k8s.io/client-go/tools/cache"

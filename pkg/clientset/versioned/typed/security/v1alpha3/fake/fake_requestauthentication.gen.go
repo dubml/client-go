@@ -19,9 +19,9 @@
 package fake
 
 import (
-	v1alpha3 "github.com/kdubbo/client-go/pkg/apis/security/v1alpha3"
-	securityv1alpha3 "github.com/kdubbo/client-go/pkg/applyconfiguration/security/v1alpha3"
-	typedsecurityv1alpha3 "github.com/kdubbo/client-go/pkg/clientset/versioned/typed/security/v1alpha3"
+	v1alpha3 "github.com/dubml/client-go/pkg/apis/security/v1alpha3"
+	securityv1alpha3 "github.com/dubml/client-go/pkg/applyconfiguration/security/v1alpha3"
+	typedsecurityv1alpha3 "github.com/dubml/client-go/pkg/clientset/versioned/typed/security/v1alpha3"
 	gentype "k8s.io/client-go/gentype"
 )
 

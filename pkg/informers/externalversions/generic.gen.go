@@ -21,9 +21,9 @@ package externalversions
 import (
 	fmt "fmt"
 
-	v1alpha3 "github.com/kdubbo/client-go/pkg/apis/networking/v1alpha3"
-	securityv1alpha3 "github.com/kdubbo/client-go/pkg/apis/security/v1alpha3"
-	telemetryv1alpha3 "github.com/kdubbo/client-go/pkg/apis/telemetry/v1alpha3"
+	v1alpha3 "github.com/dubml/client-go/pkg/apis/networking/v1alpha3"
+	securityv1alpha3 "github.com/dubml/client-go/pkg/apis/security/v1alpha3"
+	telemetryv1alpha3 "github.com/dubml/client-go/pkg/apis/telemetry/v1alpha3"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	cache "k8s.io/client-go/tools/cache"
 )
@@ -57,14 +57,14 @@ func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource
 	// Group=networking.dubbo.apache.org, Version=v1alpha3
 	case v1alpha3.SchemeGroupVersion.WithResource("circuitbreakerpolicies"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Networking().V1alpha3().CircuitBreakerPolicies().Informer()}, nil
-	case v1alpha3.SchemeGroupVersion.WithResource("dxgateservices"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Networking().V1alpha3().DxgateServices().Informer()}, nil
 	case v1alpha3.SchemeGroupVersion.WithResource("faultinjectionpolicies"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Networking().V1alpha3().FaultInjectionPolicies().Informer()}, nil
 	case v1alpha3.SchemeGroupVersion.WithResource("serviceactivationpolicies"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Networking().V1alpha3().ServiceActivationPolicies().Informer()}, nil
 	case v1alpha3.SchemeGroupVersion.WithResource("serviceentries"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Networking().V1alpha3().ServiceEntries().Informer()}, nil
+	case v1alpha3.SchemeGroupVersion.WithResource("transitservices"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Networking().V1alpha3().TransitServices().Informer()}, nil
 	case v1alpha3.SchemeGroupVersion.WithResource("workloadentries"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Networking().V1alpha3().WorkloadEntries().Informer()}, nil
 

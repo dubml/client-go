@@ -22,9 +22,9 @@ import (
 	fmt "fmt"
 	http "net/http"
 
-	networkingv1alpha3 "github.com/kdubbo/client-go/pkg/clientset/versioned/typed/networking/v1alpha3"
-	securityv1alpha3 "github.com/kdubbo/client-go/pkg/clientset/versioned/typed/security/v1alpha3"
-	telemetryv1alpha3 "github.com/kdubbo/client-go/pkg/clientset/versioned/typed/telemetry/v1alpha3"
+	networkingv1alpha3 "github.com/dubml/client-go/pkg/clientset/versioned/typed/networking/v1alpha3"
+	securityv1alpha3 "github.com/dubml/client-go/pkg/clientset/versioned/typed/security/v1alpha3"
+	telemetryv1alpha3 "github.com/dubml/client-go/pkg/clientset/versioned/typed/telemetry/v1alpha3"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

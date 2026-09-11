@@ -19,7 +19,7 @@
 package fake
 
 import (
-	v1alpha3 "github.com/kdubbo/client-go/pkg/clientset/versioned/typed/telemetry/v1alpha3"
+	v1alpha3 "github.com/dubml/client-go/pkg/clientset/versioned/typed/telemetry/v1alpha3"
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
 )

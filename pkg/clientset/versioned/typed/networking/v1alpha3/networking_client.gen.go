@@ -21,18 +21,18 @@ package v1alpha3
 import (
 	http "net/http"
 
-	networkingv1alpha3 "github.com/kdubbo/client-go/pkg/apis/networking/v1alpha3"
-	scheme "github.com/kdubbo/client-go/pkg/clientset/versioned/scheme"
+	networkingv1alpha3 "github.com/dubml/client-go/pkg/apis/networking/v1alpha3"
+	scheme "github.com/dubml/client-go/pkg/clientset/versioned/scheme"
 	rest "k8s.io/client-go/rest"
 )
 
 type NetworkingV1alpha3Interface interface {
 	RESTClient() rest.Interface
 	CircuitBreakerPoliciesGetter
-	DxgateServicesGetter
 	FaultInjectionPoliciesGetter
 	ServiceActivationPoliciesGetter
 	ServiceEntriesGetter
+	TransitServicesGetter
 	WorkloadEntriesGetter
 }
 
@@ -45,10 +45,6 @@ func (c *NetworkingV1alpha3Client) CircuitBreakerPolicies(namespace string) Circ
 	return newCircuitBreakerPolicies(c, namespace)
 }
 
-func (c *NetworkingV1alpha3Client) DxgateServices(namespace string) DxgateServiceInterface {
-	return newDxgateServices(c, namespace)
-}
-
 func (c *NetworkingV1alpha3Client) FaultInjectionPolicies(namespace string) FaultInjectionPolicyInterface {
 	return newFaultInjectionPolicies(c, namespace)
 }
@@ -59,6 +55,10 @@ func (c *NetworkingV1alpha3Client) ServiceActivationPolicies(namespace string) S
 
 func (c *NetworkingV1alpha3Client) ServiceEntries(namespace string) ServiceEntryInterface {
 	return newServiceEntries(c, namespace)
+}
+
+func (c *NetworkingV1alpha3Client) TransitServices(namespace string) TransitServiceInterface {
+	return newTransitServices(c, namespace)
 }
 
 func (c *NetworkingV1alpha3Client) WorkloadEntries(namespace string) WorkloadEntryInterface {

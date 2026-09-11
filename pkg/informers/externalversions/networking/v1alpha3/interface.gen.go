@@ -19,21 +19,21 @@
 package v1alpha3
 
 import (
-	internalinterfaces "github.com/kdubbo/client-go/pkg/informers/externalversions/internalinterfaces"
+	internalinterfaces "github.com/dubml/client-go/pkg/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
 	// CircuitBreakerPolicies returns a CircuitBreakerPolicyInformer.
 	CircuitBreakerPolicies() CircuitBreakerPolicyInformer
-	// DxgateServices returns a DxgateServiceInformer.
-	DxgateServices() DxgateServiceInformer
 	// FaultInjectionPolicies returns a FaultInjectionPolicyInformer.
 	FaultInjectionPolicies() FaultInjectionPolicyInformer
 	// ServiceActivationPolicies returns a ServiceActivationPolicyInformer.
 	ServiceActivationPolicies() ServiceActivationPolicyInformer
 	// ServiceEntries returns a ServiceEntryInformer.
 	ServiceEntries() ServiceEntryInformer
+	// TransitServices returns a TransitServiceInformer.
+	TransitServices() TransitServiceInformer
 	// WorkloadEntries returns a WorkloadEntryInformer.
 	WorkloadEntries() WorkloadEntryInformer
 }
@@ -54,11 +54,6 @@ func (v *version) CircuitBreakerPolicies() CircuitBreakerPolicyInformer {
 	return &circuitBreakerPolicyInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
-// DxgateServices returns a DxgateServiceInformer.
-func (v *version) DxgateServices() DxgateServiceInformer {
-	return &dxgateServiceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
-}
-
 // FaultInjectionPolicies returns a FaultInjectionPolicyInformer.
 func (v *version) FaultInjectionPolicies() FaultInjectionPolicyInformer {
 	return &faultInjectionPolicyInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
@@ -72,6 +67,11 @@ func (v *version) ServiceActivationPolicies() ServiceActivationPolicyInformer {
 // ServiceEntries returns a ServiceEntryInformer.
 func (v *version) ServiceEntries() ServiceEntryInformer {
 	return &serviceEntryInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// TransitServices returns a TransitServiceInformer.
+func (v *version) TransitServices() TransitServiceInformer {
+	return &transitServiceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // WorkloadEntries returns a WorkloadEntryInformer.

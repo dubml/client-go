@@ -19,9 +19,9 @@
 package fake
 
 import (
-	v1alpha3 "github.com/kdubbo/client-go/pkg/apis/telemetry/v1alpha3"
-	telemetryv1alpha3 "github.com/kdubbo/client-go/pkg/applyconfiguration/telemetry/v1alpha3"
-	typedtelemetryv1alpha3 "github.com/kdubbo/client-go/pkg/clientset/versioned/typed/telemetry/v1alpha3"
+	v1alpha3 "github.com/dubml/client-go/pkg/apis/telemetry/v1alpha3"
+	telemetryv1alpha3 "github.com/dubml/client-go/pkg/applyconfiguration/telemetry/v1alpha3"
+	typedtelemetryv1alpha3 "github.com/dubml/client-go/pkg/clientset/versioned/typed/telemetry/v1alpha3"
 	gentype "k8s.io/client-go/gentype"
 )
 

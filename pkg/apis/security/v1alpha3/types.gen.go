@@ -19,8 +19,8 @@
 package v1alpha3
 
 import (
-	v1alpha1 "github.com/kdubbo/api/meta/v1alpha1"
-	securityv1alpha3 "github.com/kdubbo/api/security/v1alpha3"
+	v1alpha1 "github.com/dubml/api/meta/v1alpha1"
+	securityv1alpha3 "github.com/dubml/api/security/v1alpha3"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -37,7 +37,7 @@ import (
 // +cue-gen:AuthorizationPolicy:labels:app=dubbo,chart=dubbo,dubbo=security,heritage=Tiller,release=dubbo
 // +cue-gen:AuthorizationPolicy:subresource:status
 // +cue-gen:AuthorizationPolicy:scope:Namespaced
-// +cue-gen:AuthorizationPolicy:resource:categories=dubbo,security,shortNames=ap
+// +cue-gen:AuthorizationPolicy:resource:categories=dubbo,security,shortNames=ap,plural=authorizationpolicies,singular=authorizationpolicy
 // +cue-gen:AuthorizationPolicy:preserveUnknownFields:false
 // +cue-gen:AuthorizationPolicy:printerColumn:name=Action,type=string,JSONPath=.spec.action,description="The authorization action."
 // +cue-gen:AuthorizationPolicy:printerColumn:name=Age,type=date,JSONPath=.metadata.creationTimestamp,description="CreationTimestamp is a timestamp

@@ -19,7 +19,7 @@
 package fake
 
 import (
-	v1alpha3 "github.com/kdubbo/client-go/pkg/clientset/versioned/typed/networking/v1alpha3"
+	v1alpha3 "github.com/dubml/client-go/pkg/clientset/versioned/typed/networking/v1alpha3"
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
 )
@@ -32,10 +32,6 @@ func (c *FakeNetworkingV1alpha3) CircuitBreakerPolicies(namespace string) v1alph
 	return newFakeCircuitBreakerPolicies(c, namespace)
 }
 
-func (c *FakeNetworkingV1alpha3) DxgateServices(namespace string) v1alpha3.DxgateServiceInterface {
-	return newFakeDxgateServices(c, namespace)
-}
-
 func (c *FakeNetworkingV1alpha3) FaultInjectionPolicies(namespace string) v1alpha3.FaultInjectionPolicyInterface {
 	return newFakeFaultInjectionPolicies(c, namespace)
 }
@@ -46,6 +42,10 @@ func (c *FakeNetworkingV1alpha3) ServiceActivationPolicies(namespace string) v1a
 
 func (c *FakeNetworkingV1alpha3) ServiceEntries(namespace string) v1alpha3.ServiceEntryInterface {
 	return newFakeServiceEntries(c, namespace)
+}
+
+func (c *FakeNetworkingV1alpha3) TransitServices(namespace string) v1alpha3.TransitServiceInterface {
+	return newFakeTransitServices(c, namespace)
 }
 
 func (c *FakeNetworkingV1alpha3) WorkloadEntries(namespace string) v1alpha3.WorkloadEntryInterface {

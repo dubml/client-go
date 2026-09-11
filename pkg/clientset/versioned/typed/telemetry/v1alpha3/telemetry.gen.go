@@ -21,9 +21,9 @@ package v1alpha3
 import (
 	context "context"
 
-	telemetryv1alpha3 "github.com/kdubbo/client-go/pkg/apis/telemetry/v1alpha3"
-	applyconfigurationtelemetryv1alpha3 "github.com/kdubbo/client-go/pkg/applyconfiguration/telemetry/v1alpha3"
-	scheme "github.com/kdubbo/client-go/pkg/clientset/versioned/scheme"
+	telemetryv1alpha3 "github.com/dubml/client-go/pkg/apis/telemetry/v1alpha3"
+	applyconfigurationtelemetryv1alpha3 "github.com/dubml/client-go/pkg/applyconfiguration/telemetry/v1alpha3"
+	scheme "github.com/dubml/client-go/pkg/clientset/versioned/scheme"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"

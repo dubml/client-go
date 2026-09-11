@@ -19,7 +19,7 @@
 package v1alpha3
 
 import (
-	telemetryv1alpha3 "github.com/kdubbo/client-go/pkg/apis/telemetry/v1alpha3"
+	telemetryv1alpha3 "github.com/dubml/client-go/pkg/apis/telemetry/v1alpha3"
 	labels "k8s.io/apimachinery/pkg/labels"
 	listers "k8s.io/client-go/listers"
 	cache "k8s.io/client-go/tools/cache"

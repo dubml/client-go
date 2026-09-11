@@ -19,8 +19,8 @@
 package v1alpha3
 
 import (
-	v1alpha1 "github.com/kdubbo/api/meta/v1alpha1"
-	networkingv1alpha3 "github.com/kdubbo/api/networking/v1alpha3"
+	v1alpha1 "github.com/dubml/api/meta/v1alpha1"
+	networkingv1alpha3 "github.com/dubml/api/networking/v1alpha3"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -70,58 +70,6 @@ type CircuitBreakerPolicyList struct {
 	// +optional
 	v1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	Items       []*CircuitBreakerPolicy `json:"items" protobuf:"bytes,2,rep,name=items"`
-}
-
-//
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-
-// DxgateService is the single mesh API for non-standard application protocols
-// served by dxgate. Ordinary HTTP backends remain Kubernetes Services.
-//
-// HTTPRoute backendRefs select a DxgateService exactly as they select a core
-// Service. dubbod validates the reference, resolves its Kubernetes targets and
-// policies, and delivers the compiled configuration to dxgate over xDS. The
-// data plane does not watch a second, private CRD API.
-//
-// <!-- crd generation tags
-// +cue-gen:DxgateService:groupName:networking.dubbo.apache.org
-// +cue-gen:DxgateService:versions:v1alpha3
-// +cue-gen:DxgateService:storageVersion
-// +cue-gen:DxgateService:annotations:helm.sh/resource-policy=keep
-// +cue-gen:DxgateService:labels:app=dubbo,chart=dubbo,dubbo=networking,heritage=Tiller,release=dubbo
-// +cue-gen:DxgateService:subresource:status
-// +cue-gen:DxgateService:scope:Namespaced
-// +cue-gen:DxgateService:resource:categories=dubbo,networking,shortNames=dxsvc,plural=dxgateservices,singular=dxgateservice
-// +cue-gen:DxgateService:preserveUnknownFields:false
-// +cue-gen:DxgateService:printerColumn:name=Age,type=date,JSONPath=.metadata.creationTimestamp,description="CreationTimestamp is a timestamp representing the server time when this object was created."
-// -->
-//
-// <!-- go code generation tags
-// +kubetype-gen
-// +kubetype-gen:groupVersion=networking.dubbo.apache.org/v1alpha3
-// +genclient
-// +k8s:deepcopy-gen=true
-// -->
-type DxgateService struct {
-	v1.TypeMeta `json:",inline"`
-	// +optional
-	v1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-
-	// Spec defines the implementation of this definition.
-	// +optional
-	Spec networkingv1alpha3.DxgateService `json:"spec,omitempty" protobuf:"bytes,2,opt,name=spec"`
-
-	Status v1alpha1.DubboStatus `json:"status,omitempty"`
-}
-
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-
-// DxgateServiceList is a collection of DxgateServices.
-type DxgateServiceList struct {
-	v1.TypeMeta `json:",inline"`
-	// +optional
-	v1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Items       []*DxgateService `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
 //
@@ -279,6 +227,58 @@ type ServiceEntryList struct {
 	// +optional
 	v1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	Items       []*ServiceEntry `json:"items" protobuf:"bytes,2,rep,name=items"`
+}
+
+//
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+
+// TransitService is the single mesh API for non-standard application protocols
+// served by transit. Ordinary HTTP backends remain Kubernetes Services.
+//
+// HTTPRoute backendRefs select a TransitService exactly as they select a core
+// Service. dubbod validates the reference, resolves its Kubernetes targets and
+// policies, and delivers the compiled configuration to transit over xDS. The
+// data plane does not watch a second, private CRD API.
+//
+// <!-- crd generation tags
+// +cue-gen:TransitService:groupName:networking.dubbo.apache.org
+// +cue-gen:TransitService:versions:v1alpha3
+// +cue-gen:TransitService:storageVersion
+// +cue-gen:TransitService:annotations:helm.sh/resource-policy=keep
+// +cue-gen:TransitService:labels:app=dubbo,chart=dubbo,dubbo=networking,heritage=Tiller,release=dubbo
+// +cue-gen:TransitService:subresource:status
+// +cue-gen:TransitService:scope:Namespaced
+// +cue-gen:TransitService:resource:categories=dubbo,networking,shortNames=transitsvc,plural=transitservices,singular=transitservice
+// +cue-gen:TransitService:preserveUnknownFields:false
+// +cue-gen:TransitService:printerColumn:name=Age,type=date,JSONPath=.metadata.creationTimestamp,description="CreationTimestamp is a timestamp representing the server time when this object was created."
+// -->
+//
+// <!-- go code generation tags
+// +kubetype-gen
+// +kubetype-gen:groupVersion=networking.dubbo.apache.org/v1alpha3
+// +genclient
+// +k8s:deepcopy-gen=true
+// -->
+type TransitService struct {
+	v1.TypeMeta `json:",inline"`
+	// +optional
+	v1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
+
+	// Spec defines the implementation of this definition.
+	// +optional
+	Spec networkingv1alpha3.TransitService `json:"spec,omitempty" protobuf:"bytes,2,opt,name=spec"`
+
+	Status v1alpha1.DubboStatus `json:"status,omitempty"`
+}
+
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+
+// TransitServiceList is a collection of TransitServices.
+type TransitServiceList struct {
+	v1.TypeMeta `json:",inline"`
+	// +optional
+	v1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
+	Items       []*TransitService `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
 //

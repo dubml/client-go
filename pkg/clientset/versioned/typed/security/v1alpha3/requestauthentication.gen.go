@@ -21,9 +21,9 @@ package v1alpha3
 import (
 	context "context"
 
-	securityv1alpha3 "github.com/kdubbo/client-go/pkg/apis/security/v1alpha3"
-	applyconfigurationsecurityv1alpha3 "github.com/kdubbo/client-go/pkg/applyconfiguration/security/v1alpha3"
-	scheme "github.com/kdubbo/client-go/pkg/clientset/versioned/scheme"
+	securityv1alpha3 "github.com/dubml/client-go/pkg/apis/security/v1alpha3"
+	applyconfigurationsecurityv1alpha3 "github.com/dubml/client-go/pkg/applyconfiguration/security/v1alpha3"
+	scheme "github.com/dubml/client-go/pkg/clientset/versioned/scheme"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"

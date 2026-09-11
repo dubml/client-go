@@ -19,38 +19,38 @@
 package v1alpha3
 
 import (
-	v1alpha1 "github.com/kdubbo/api/meta/v1alpha1"
-	networkingv1alpha3 "github.com/kdubbo/api/networking/v1alpha3"
+	v1alpha1 "github.com/dubml/api/meta/v1alpha1"
+	networkingv1alpha3 "github.com/dubml/api/networking/v1alpha3"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	v1 "k8s.io/client-go/applyconfigurations/meta/v1"
 )
 
-// DxgateServiceApplyConfiguration represents a declarative configuration of the DxgateService type for use
+// TransitServiceApplyConfiguration represents a declarative configuration of the TransitService type for use
 // with apply.
-type DxgateServiceApplyConfiguration struct {
+type TransitServiceApplyConfiguration struct {
 	v1.TypeMetaApplyConfiguration    `json:",inline"`
 	*v1.ObjectMetaApplyConfiguration `json:"metadata,omitempty"`
-	Spec                             *networkingv1alpha3.DxgateService `json:"spec,omitempty"`
-	Status                           *v1alpha1.DubboStatus             `json:"status,omitempty"`
+	Spec                             *networkingv1alpha3.TransitService `json:"spec,omitempty"`
+	Status                           *v1alpha1.DubboStatus              `json:"status,omitempty"`
 }
 
-// DxgateService constructs a declarative configuration of the DxgateService type for use with
+// TransitService constructs a declarative configuration of the TransitService type for use with
 // apply.
-func DxgateService(name, namespace string) *DxgateServiceApplyConfiguration {
-	b := &DxgateServiceApplyConfiguration{}
+func TransitService(name, namespace string) *TransitServiceApplyConfiguration {
+	b := &TransitServiceApplyConfiguration{}
 	b.WithName(name)
 	b.WithNamespace(namespace)
-	b.WithKind("DxgateService")
+	b.WithKind("TransitService")
 	b.WithAPIVersion("networking.dubbo.apache.org/v1alpha3")
 	return b
 }
-func (b DxgateServiceApplyConfiguration) IsApplyConfiguration() {}
+func (b TransitServiceApplyConfiguration) IsApplyConfiguration() {}
 
 // WithKind sets the Kind field in the declarative configuration to the given value
 // and returns the receiver, so that objects can be built by chaining "With" function invocations.
 // If called multiple times, the Kind field is set to the value of the last call.
-func (b *DxgateServiceApplyConfiguration) WithKind(value string) *DxgateServiceApplyConfiguration {
+func (b *TransitServiceApplyConfiguration) WithKind(value string) *TransitServiceApplyConfiguration {
 	b.TypeMetaApplyConfiguration.Kind = &value
 	return b
 }
@@ -58,7 +58,7 @@ func (b *DxgateServiceApplyConfiguration) WithKind(value string) *DxgateServiceA
 // WithAPIVersion sets the APIVersion field in the declarative configuration to the given value
 // and returns the receiver, so that objects can be built by chaining "With" function invocations.
 // If called multiple times, the APIVersion field is set to the value of the last call.
-func (b *DxgateServiceApplyConfiguration) WithAPIVersion(value string) *DxgateServiceApplyConfiguration {
+func (b *TransitServiceApplyConfiguration) WithAPIVersion(value string) *TransitServiceApplyConfiguration {
 	b.TypeMetaApplyConfiguration.APIVersion = &value
 	return b
 }
@@ -66,7 +66,7 @@ func (b *DxgateServiceApplyConfiguration) WithAPIVersion(value string) *DxgateSe
 // WithName sets the Name field in the declarative configuration to the given value
 // and returns the receiver, so that objects can be built by chaining "With" function invocations.
 // If called multiple times, the Name field is set to the value of the last call.
-func (b *DxgateServiceApplyConfiguration) WithName(value string) *DxgateServiceApplyConfiguration {
+func (b *TransitServiceApplyConfiguration) WithName(value string) *TransitServiceApplyConfiguration {
 	b.ensureObjectMetaApplyConfigurationExists()
 	b.ObjectMetaApplyConfiguration.Name = &value
 	return b
@@ -75,7 +75,7 @@ func (b *DxgateServiceApplyConfiguration) WithName(value string) *DxgateServiceA
 // WithGenerateName sets the GenerateName field in the declarative configuration to the given value
 // and returns the receiver, so that objects can be built by chaining "With" function invocations.
 // If called multiple times, the GenerateName field is set to the value of the last call.
-func (b *DxgateServiceApplyConfiguration) WithGenerateName(value string) *DxgateServiceApplyConfiguration {
+func (b *TransitServiceApplyConfiguration) WithGenerateName(value string) *TransitServiceApplyConfiguration {
 	b.ensureObjectMetaApplyConfigurationExists()
 	b.ObjectMetaApplyConfiguration.GenerateName = &value
 	return b
@@ -84,7 +84,7 @@ func (b *DxgateServiceApplyConfiguration) WithGenerateName(value string) *Dxgate
 // WithNamespace sets the Namespace field in the declarative configuration to the given value
 // and returns the receiver, so that objects can be built by chaining "With" function invocations.
 // If called multiple times, the Namespace field is set to the value of the last call.
-func (b *DxgateServiceApplyConfiguration) WithNamespace(value string) *DxgateServiceApplyConfiguration {
+func (b *TransitServiceApplyConfiguration) WithNamespace(value string) *TransitServiceApplyConfiguration {
 	b.ensureObjectMetaApplyConfigurationExists()
 	b.ObjectMetaApplyConfiguration.Namespace = &value
 	return b
@@ -93,7 +93,7 @@ func (b *DxgateServiceApplyConfiguration) WithNamespace(value string) *DxgateSer
 // WithUID sets the UID field in the declarative configuration to the given value
 // and returns the receiver, so that objects can be built by chaining "With" function invocations.
 // If called multiple times, the UID field is set to the value of the last call.
-func (b *DxgateServiceApplyConfiguration) WithUID(value types.UID) *DxgateServiceApplyConfiguration {
+func (b *TransitServiceApplyConfiguration) WithUID(value types.UID) *TransitServiceApplyConfiguration {
 	b.ensureObjectMetaApplyConfigurationExists()
 	b.ObjectMetaApplyConfiguration.UID = &value
 	return b
@@ -102,7 +102,7 @@ func (b *DxgateServiceApplyConfiguration) WithUID(value types.UID) *DxgateServic
 // WithResourceVersion sets the ResourceVersion field in the declarative configuration to the given value
 // and returns the receiver, so that objects can be built by chaining "With" function invocations.
 // If called multiple times, the ResourceVersion field is set to the value of the last call.
-func (b *DxgateServiceApplyConfiguration) WithResourceVersion(value string) *DxgateServiceApplyConfiguration {
+func (b *TransitServiceApplyConfiguration) WithResourceVersion(value string) *TransitServiceApplyConfiguration {
 	b.ensureObjectMetaApplyConfigurationExists()
 	b.ObjectMetaApplyConfiguration.ResourceVersion = &value
 	return b
@@ -111,7 +111,7 @@ func (b *DxgateServiceApplyConfiguration) WithResourceVersion(value string) *Dxg
 // WithGeneration sets the Generation field in the declarative configuration to the given value
 // and returns the receiver, so that objects can be built by chaining "With" function invocations.
 // If called multiple times, the Generation field is set to the value of the last call.
-func (b *DxgateServiceApplyConfiguration) WithGeneration(value int64) *DxgateServiceApplyConfiguration {
+func (b *TransitServiceApplyConfiguration) WithGeneration(value int64) *TransitServiceApplyConfiguration {
 	b.ensureObjectMetaApplyConfigurationExists()
 	b.ObjectMetaApplyConfiguration.Generation = &value
 	return b
@@ -120,7 +120,7 @@ func (b *DxgateServiceApplyConfiguration) WithGeneration(value int64) *DxgateSer
 // WithCreationTimestamp sets the CreationTimestamp field in the declarative configuration to the given value
 // and returns the receiver, so that objects can be built by chaining "With" function invocations.
 // If called multiple times, the CreationTimestamp field is set to the value of the last call.
-func (b *DxgateServiceApplyConfiguration) WithCreationTimestamp(value metav1.Time) *DxgateServiceApplyConfiguration {
+func (b *TransitServiceApplyConfiguration) WithCreationTimestamp(value metav1.Time) *TransitServiceApplyConfiguration {
 	b.ensureObjectMetaApplyConfigurationExists()
 	b.ObjectMetaApplyConfiguration.CreationTimestamp = &value
 	return b
@@ -129,7 +129,7 @@ func (b *DxgateServiceApplyConfiguration) WithCreationTimestamp(value metav1.Tim
 // WithDeletionTimestamp sets the DeletionTimestamp field in the declarative configuration to the given value
 // and returns the receiver, so that objects can be built by chaining "With" function invocations.
 // If called multiple times, the DeletionTimestamp field is set to the value of the last call.
-func (b *DxgateServiceApplyConfiguration) WithDeletionTimestamp(value metav1.Time) *DxgateServiceApplyConfiguration {
+func (b *TransitServiceApplyConfiguration) WithDeletionTimestamp(value metav1.Time) *TransitServiceApplyConfiguration {
 	b.ensureObjectMetaApplyConfigurationExists()
 	b.ObjectMetaApplyConfiguration.DeletionTimestamp = &value
 	return b
@@ -138,7 +138,7 @@ func (b *DxgateServiceApplyConfiguration) WithDeletionTimestamp(value metav1.Tim
 // WithDeletionGracePeriodSeconds sets the DeletionGracePeriodSeconds field in the declarative configuration to the given value
 // and returns the receiver, so that objects can be built by chaining "With" function invocations.
 // If called multiple times, the DeletionGracePeriodSeconds field is set to the value of the last call.
-func (b *DxgateServiceApplyConfiguration) WithDeletionGracePeriodSeconds(value int64) *DxgateServiceApplyConfiguration {
+func (b *TransitServiceApplyConfiguration) WithDeletionGracePeriodSeconds(value int64) *TransitServiceApplyConfiguration {
 	b.ensureObjectMetaApplyConfigurationExists()
 	b.ObjectMetaApplyConfiguration.DeletionGracePeriodSeconds = &value
 	return b
@@ -148,7 +148,7 @@ func (b *DxgateServiceApplyConfiguration) WithDeletionGracePeriodSeconds(value i
 // and returns the receiver, so that objects can be build by chaining "With" function invocations.
 // If called multiple times, the entries provided by each call will be put on the Labels field,
 // overwriting an existing map entries in Labels field with the same key.
-func (b *DxgateServiceApplyConfiguration) WithLabels(entries map[string]string) *DxgateServiceApplyConfiguration {
+func (b *TransitServiceApplyConfiguration) WithLabels(entries map[string]string) *TransitServiceApplyConfiguration {
 	b.ensureObjectMetaApplyConfigurationExists()
 	if b.ObjectMetaApplyConfiguration.Labels == nil && len(entries) > 0 {
 		b.ObjectMetaApplyConfiguration.Labels = make(map[string]string, len(entries))
@@ -163,7 +163,7 @@ func (b *DxgateServiceApplyConfiguration) WithLabels(entries map[string]string) 
 // and returns the receiver, so that objects can be build by chaining "With" function invocations.
 // If called multiple times, the entries provided by each call will be put on the Annotations field,
 // overwriting an existing map entries in Annotations field with the same key.
-func (b *DxgateServiceApplyConfiguration) WithAnnotations(entries map[string]string) *DxgateServiceApplyConfiguration {
+func (b *TransitServiceApplyConfiguration) WithAnnotations(entries map[string]string) *TransitServiceApplyConfiguration {
 	b.ensureObjectMetaApplyConfigurationExists()
 	if b.ObjectMetaApplyConfiguration.Annotations == nil && len(entries) > 0 {
 		b.ObjectMetaApplyConfiguration.Annotations = make(map[string]string, len(entries))
@@ -177,7 +177,7 @@ func (b *DxgateServiceApplyConfiguration) WithAnnotations(entries map[string]str
 // WithOwnerReferences adds the given value to the OwnerReferences field in the declarative configuration
 // and returns the receiver, so that objects can be build by chaining "With" function invocations.
 // If called multiple times, values provided by each call will be appended to the OwnerReferences field.
-func (b *DxgateServiceApplyConfiguration) WithOwnerReferences(values ...*v1.OwnerReferenceApplyConfiguration) *DxgateServiceApplyConfiguration {
+func (b *TransitServiceApplyConfiguration) WithOwnerReferences(values ...*v1.OwnerReferenceApplyConfiguration) *TransitServiceApplyConfiguration {
 	b.ensureObjectMetaApplyConfigurationExists()
 	for i := range values {
 		if values[i] == nil {
@@ -191,7 +191,7 @@ func (b *DxgateServiceApplyConfiguration) WithOwnerReferences(values ...*v1.Owne
 // WithFinalizers adds the given value to the Finalizers field in the declarative configuration
 // and returns the receiver, so that objects can be build by chaining "With" function invocations.
 // If called multiple times, values provided by each call will be appended to the Finalizers field.
-func (b *DxgateServiceApplyConfiguration) WithFinalizers(values ...string) *DxgateServiceApplyConfiguration {
+func (b *TransitServiceApplyConfiguration) WithFinalizers(values ...string) *TransitServiceApplyConfiguration {
 	b.ensureObjectMetaApplyConfigurationExists()
 	for i := range values {
 		b.ObjectMetaApplyConfiguration.Finalizers = append(b.ObjectMetaApplyConfiguration.Finalizers, values[i])
@@ -199,7 +199,7 @@ func (b *DxgateServiceApplyConfiguration) WithFinalizers(values ...string) *Dxga
 	return b
 }
 
-func (b *DxgateServiceApplyConfiguration) ensureObjectMetaApplyConfigurationExists() {
+func (b *TransitServiceApplyConfiguration) ensureObjectMetaApplyConfigurationExists() {
 	if b.ObjectMetaApplyConfiguration == nil {
 		b.ObjectMetaApplyConfiguration = &v1.ObjectMetaApplyConfiguration{}
 	}
@@ -208,7 +208,7 @@ func (b *DxgateServiceApplyConfiguration) ensureObjectMetaApplyConfigurationExis
 // WithSpec sets the Spec field in the declarative configuration to the given value
 // and returns the receiver, so that objects can be built by chaining "With" function invocations.
 // If called multiple times, the Spec field is set to the value of the last call.
-func (b *DxgateServiceApplyConfiguration) WithSpec(value networkingv1alpha3.DxgateService) *DxgateServiceApplyConfiguration {
+func (b *TransitServiceApplyConfiguration) WithSpec(value networkingv1alpha3.TransitService) *TransitServiceApplyConfiguration {
 	b.Spec = &value
 	return b
 }
@@ -216,29 +216,29 @@ func (b *DxgateServiceApplyConfiguration) WithSpec(value networkingv1alpha3.Dxga
 // WithStatus sets the Status field in the declarative configuration to the given value
 // and returns the receiver, so that objects can be built by chaining "With" function invocations.
 // If called multiple times, the Status field is set to the value of the last call.
-func (b *DxgateServiceApplyConfiguration) WithStatus(value v1alpha1.DubboStatus) *DxgateServiceApplyConfiguration {
+func (b *TransitServiceApplyConfiguration) WithStatus(value v1alpha1.DubboStatus) *TransitServiceApplyConfiguration {
 	b.Status = &value
 	return b
 }
 
 // GetKind retrieves the value of the Kind field in the declarative configuration.
-func (b *DxgateServiceApplyConfiguration) GetKind() *string {
+func (b *TransitServiceApplyConfiguration) GetKind() *string {
 	return b.TypeMetaApplyConfiguration.Kind
 }
 
 // GetAPIVersion retrieves the value of the APIVersion field in the declarative configuration.
-func (b *DxgateServiceApplyConfiguration) GetAPIVersion() *string {
+func (b *TransitServiceApplyConfiguration) GetAPIVersion() *string {
 	return b.TypeMetaApplyConfiguration.APIVersion
 }
 
 // GetName retrieves the value of the Name field in the declarative configuration.
-func (b *DxgateServiceApplyConfiguration) GetName() *string {
+func (b *TransitServiceApplyConfiguration) GetName() *string {
 	b.ensureObjectMetaApplyConfigurationExists()
 	return b.ObjectMetaApplyConfiguration.Name
 }
 
 // GetNamespace retrieves the value of the Namespace field in the declarative configuration.
-func (b *DxgateServiceApplyConfiguration) GetNamespace() *string {
+func (b *TransitServiceApplyConfiguration) GetNamespace() *string {
 	b.ensureObjectMetaApplyConfigurationExists()
 	return b.ObjectMetaApplyConfiguration.Namespace
 }

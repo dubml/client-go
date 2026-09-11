@@ -22,81 +22,81 @@ import (
 	context "context"
 	time "time"
 
-	apisnetworkingv1alpha3 "github.com/kdubbo/client-go/pkg/apis/networking/v1alpha3"
-	versioned "github.com/kdubbo/client-go/pkg/clientset/versioned"
-	internalinterfaces "github.com/kdubbo/client-go/pkg/informers/externalversions/internalinterfaces"
-	networkingv1alpha3 "github.com/kdubbo/client-go/pkg/listers/networking/v1alpha3"
+	apisnetworkingv1alpha3 "github.com/dubml/client-go/pkg/apis/networking/v1alpha3"
+	versioned "github.com/dubml/client-go/pkg/clientset/versioned"
+	internalinterfaces "github.com/dubml/client-go/pkg/informers/externalversions/internalinterfaces"
+	networkingv1alpha3 "github.com/dubml/client-go/pkg/listers/networking/v1alpha3"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"
 	cache "k8s.io/client-go/tools/cache"
 )
 
-// DxgateServiceInformer provides access to a shared informer and lister for
-// DxgateServices.
-type DxgateServiceInformer interface {
+// TransitServiceInformer provides access to a shared informer and lister for
+// TransitServices.
+type TransitServiceInformer interface {
 	Informer() cache.SharedIndexInformer
-	Lister() networkingv1alpha3.DxgateServiceLister
+	Lister() networkingv1alpha3.TransitServiceLister
 }
 
-type dxgateServiceInformer struct {
+type transitServiceInformer struct {
 	factory          internalinterfaces.SharedInformerFactory
 	tweakListOptions internalinterfaces.TweakListOptionsFunc
 	namespace        string
 }
 
-// NewDxgateServiceInformer constructs a new informer for DxgateService type.
+// NewTransitServiceInformer constructs a new informer for TransitService type.
 // Always prefer using an informer factory to get a shared informer instead of getting an independent
 // one. This reduces memory footprint and number of connections to the server.
-func NewDxgateServiceInformer(client versioned.Interface, namespace string, resyncPeriod time.Duration, indexers cache.Indexers) cache.SharedIndexInformer {
-	return NewFilteredDxgateServiceInformer(client, namespace, resyncPeriod, indexers, nil)
+func NewTransitServiceInformer(client versioned.Interface, namespace string, resyncPeriod time.Duration, indexers cache.Indexers) cache.SharedIndexInformer {
+	return NewFilteredTransitServiceInformer(client, namespace, resyncPeriod, indexers, nil)
 }
 
-// NewFilteredDxgateServiceInformer constructs a new informer for DxgateService type.
+// NewFilteredTransitServiceInformer constructs a new informer for TransitService type.
 // Always prefer using an informer factory to get a shared informer instead of getting an independent
 // one. This reduces memory footprint and number of connections to the server.
-func NewFilteredDxgateServiceInformer(client versioned.Interface, namespace string, resyncPeriod time.Duration, indexers cache.Indexers, tweakListOptions internalinterfaces.TweakListOptionsFunc) cache.SharedIndexInformer {
+func NewFilteredTransitServiceInformer(client versioned.Interface, namespace string, resyncPeriod time.Duration, indexers cache.Indexers, tweakListOptions internalinterfaces.TweakListOptionsFunc) cache.SharedIndexInformer {
 	return cache.NewSharedIndexInformer(
 		&cache.ListWatch{
 			ListFunc: func(options v1.ListOptions) (runtime.Object, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.NetworkingV1alpha3().DxgateServices(namespace).List(context.Background(), options)
+				return client.NetworkingV1alpha3().TransitServices(namespace).List(context.Background(), options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.NetworkingV1alpha3().DxgateServices(namespace).Watch(context.Background(), options)
+				return client.NetworkingV1alpha3().TransitServices(namespace).Watch(context.Background(), options)
 			},
 			ListWithContextFunc: func(ctx context.Context, options v1.ListOptions) (runtime.Object, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.NetworkingV1alpha3().DxgateServices(namespace).List(ctx, options)
+				return client.NetworkingV1alpha3().TransitServices(namespace).List(ctx, options)
 			},
 			WatchFuncWithContext: func(ctx context.Context, options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.NetworkingV1alpha3().DxgateServices(namespace).Watch(ctx, options)
+				return client.NetworkingV1alpha3().TransitServices(namespace).Watch(ctx, options)
 			},
 		},
-		&apisnetworkingv1alpha3.DxgateService{},
+		&apisnetworkingv1alpha3.TransitService{},
 		resyncPeriod,
 		indexers,
 	)
 }
 
-func (f *dxgateServiceInformer) defaultInformer(client versioned.Interface, resyncPeriod time.Duration) cache.SharedIndexInformer {
-	return NewFilteredDxgateServiceInformer(client, f.namespace, resyncPeriod, cache.Indexers{cache.NamespaceIndex: cache.MetaNamespaceIndexFunc}, f.tweakListOptions)
+func (f *transitServiceInformer) defaultInformer(client versioned.Interface, resyncPeriod time.Duration) cache.SharedIndexInformer {
+	return NewFilteredTransitServiceInformer(client, f.namespace, resyncPeriod, cache.Indexers{cache.NamespaceIndex: cache.MetaNamespaceIndexFunc}, f.tweakListOptions)
 }
 
-func (f *dxgateServiceInformer) Informer() cache.SharedIndexInformer {
-	return f.factory.InformerFor(&apisnetworkingv1alpha3.DxgateService{}, f.defaultInformer)
+func (f *transitServiceInformer) Informer() cache.SharedIndexInformer {
+	return f.factory.InformerFor(&apisnetworkingv1alpha3.TransitService{}, f.defaultInformer)
 }
 
-func (f *dxgateServiceInformer) Lister() networkingv1alpha3.DxgateServiceLister {
-	return networkingv1alpha3.NewDxgateServiceLister(f.Informer().GetIndexer())
+func (f *transitServiceInformer) Lister() networkingv1alpha3.TransitServiceLister {
+	return networkingv1alpha3.NewTransitServiceLister(f.Informer().GetIndexer())
 }

@@ -19,8 +19,8 @@
 package v1alpha3
 
 import (
-	v1alpha1 "github.com/kdubbo/api/meta/v1alpha1"
-	telemetryv1alpha3 "github.com/kdubbo/api/telemetry/v1alpha3"
+	v1alpha1 "github.com/dubml/api/meta/v1alpha1"
+	telemetryv1alpha3 "github.com/dubml/api/telemetry/v1alpha3"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 

@@ -19,13 +19,13 @@
 package applyconfiguration
 
 import (
-	v1alpha3 "github.com/kdubbo/client-go/pkg/apis/networking/v1alpha3"
-	securityv1alpha3 "github.com/kdubbo/client-go/pkg/apis/security/v1alpha3"
-	telemetryv1alpha3 "github.com/kdubbo/client-go/pkg/apis/telemetry/v1alpha3"
-	internal "github.com/kdubbo/client-go/pkg/applyconfiguration/internal"
-	networkingv1alpha3 "github.com/kdubbo/client-go/pkg/applyconfiguration/networking/v1alpha3"
-	applyconfigurationsecurityv1alpha3 "github.com/kdubbo/client-go/pkg/applyconfiguration/security/v1alpha3"
-	applyconfigurationtelemetryv1alpha3 "github.com/kdubbo/client-go/pkg/applyconfiguration/telemetry/v1alpha3"
+	v1alpha3 "github.com/dubml/client-go/pkg/apis/networking/v1alpha3"
+	securityv1alpha3 "github.com/dubml/client-go/pkg/apis/security/v1alpha3"
+	telemetryv1alpha3 "github.com/dubml/client-go/pkg/apis/telemetry/v1alpha3"
+	internal "github.com/dubml/client-go/pkg/applyconfiguration/internal"
+	networkingv1alpha3 "github.com/dubml/client-go/pkg/applyconfiguration/networking/v1alpha3"
+	applyconfigurationsecurityv1alpha3 "github.com/dubml/client-go/pkg/applyconfiguration/security/v1alpha3"
+	applyconfigurationtelemetryv1alpha3 "github.com/dubml/client-go/pkg/applyconfiguration/telemetry/v1alpha3"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	managedfields "k8s.io/apimachinery/pkg/util/managedfields"
@@ -38,14 +38,14 @@ func ForKind(kind schema.GroupVersionKind) interface{} {
 	// Group=networking.dubbo.apache.org, Version=v1alpha3
 	case v1alpha3.SchemeGroupVersion.WithKind("CircuitBreakerPolicy"):
 		return &networkingv1alpha3.CircuitBreakerPolicyApplyConfiguration{}
-	case v1alpha3.SchemeGroupVersion.WithKind("DxgateService"):
-		return &networkingv1alpha3.DxgateServiceApplyConfiguration{}
 	case v1alpha3.SchemeGroupVersion.WithKind("FaultInjectionPolicy"):
 		return &networkingv1alpha3.FaultInjectionPolicyApplyConfiguration{}
 	case v1alpha3.SchemeGroupVersion.WithKind("ServiceActivationPolicy"):
 		return &networkingv1alpha3.ServiceActivationPolicyApplyConfiguration{}
 	case v1alpha3.SchemeGroupVersion.WithKind("ServiceEntry"):
 		return &networkingv1alpha3.ServiceEntryApplyConfiguration{}
+	case v1alpha3.SchemeGroupVersion.WithKind("TransitService"):
+		return &networkingv1alpha3.TransitServiceApplyConfiguration{}
 	case v1alpha3.SchemeGroupVersion.WithKind("WorkloadEntry"):
 		return &networkingv1alpha3.WorkloadEntryApplyConfiguration{}
 

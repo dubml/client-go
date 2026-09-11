@@ -21,9 +21,9 @@ package v1alpha3
 import (
 	context "context"
 
-	networkingv1alpha3 "github.com/kdubbo/client-go/pkg/apis/networking/v1alpha3"
-	applyconfigurationnetworkingv1alpha3 "github.com/kdubbo/client-go/pkg/applyconfiguration/networking/v1alpha3"
-	scheme "github.com/kdubbo/client-go/pkg/clientset/versioned/scheme"
+	networkingv1alpha3 "github.com/dubml/client-go/pkg/apis/networking/v1alpha3"
+	applyconfigurationnetworkingv1alpha3 "github.com/dubml/client-go/pkg/applyconfiguration/networking/v1alpha3"
+	scheme "github.com/dubml/client-go/pkg/clientset/versioned/scheme"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"

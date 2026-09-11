@@ -25,12 +25,12 @@ lister_gen = lister-gen
 informer_gen = informer-gen
 
 kube_dubbo_source_packages = $(subst $(space),$(empty), \
-    github.com/kdubbo/api/security/v1alpha3, \
-    github.com/kdubbo/api/networking/v1alpha3, \
-    github.com/kdubbo/api/telemetry/v1alpha3 \
+    github.com/dubml/api/security/v1alpha3, \
+    github.com/dubml/api/networking/v1alpha3, \
+    github.com/dubml/api/telemetry/v1alpha3 \
     )
 
-kube_base_output_package = github.com/kdubbo/client-go/pkg
+kube_base_output_package = github.com/dubml/client-go/pkg
 kube_api_base_package = $(kube_base_output_package)/apis
 
 kube_api_packages = $(subst $(space),$(empty), \
@@ -54,10 +54,10 @@ comma := ,
 
 move_generated=\
 	([ -d $(GOPATH)/src/$(kube_base_output_package)/ ] && mkdir -p pkg && cp -R $(GOPATH)/src/$(kube_base_output_package)/. pkg/ && rm -rf $(GOPATH)/src/$(kube_base_output_package)/) || true; \
-	([ -d github.com/kdubbo/client-go/pkg/ ] && mkdir -p pkg && cp -R github.com/kdubbo/client-go/pkg/. pkg/ && rm -rf github.com) || true
+	([ -d github.com/dubml/client-go/pkg/ ] && mkdir -p pkg && cp -R github.com/dubml/client-go/pkg/. pkg/ && rm -rf github.com) || true
 
 rename_generated_files=\
-	find $(subst github.com/kdubbo/client-go/, $(empty), $(subst $(comma), $(space), $(kube_api_packages) $(kube_clientset_package) $(kube_listers_package) $(kube_informers_package))) \
+	find $(subst github.com/dubml/client-go/, $(empty), $(subst $(comma), $(space), $(kube_api_packages) $(kube_clientset_package) $(kube_listers_package) $(kube_informers_package))) \
 	-name '*.go' -and -not -name 'doc.go' -and -not -name '*.gen.go' -type f -exec sh -c 'mv "$$1" "$${1%.go}".gen.go' - '{}' \; || true
 
 fixup_generated_files=\
