@@ -40,12 +40,8 @@ func ForKind(kind schema.GroupVersionKind) interface{} {
 		return &networkingv1alpha3.CircuitBreakerPolicyApplyConfiguration{}
 	case v1alpha3.SchemeGroupVersion.WithKind("FaultInjectionPolicy"):
 		return &networkingv1alpha3.FaultInjectionPolicyApplyConfiguration{}
-	case v1alpha3.SchemeGroupVersion.WithKind("ServiceActivationPolicy"):
-		return &networkingv1alpha3.ServiceActivationPolicyApplyConfiguration{}
 	case v1alpha3.SchemeGroupVersion.WithKind("ServiceEntry"):
 		return &networkingv1alpha3.ServiceEntryApplyConfiguration{}
-	case v1alpha3.SchemeGroupVersion.WithKind("TransitService"):
-		return &networkingv1alpha3.TransitServiceApplyConfiguration{}
 	case v1alpha3.SchemeGroupVersion.WithKind("WorkloadEntry"):
 		return &networkingv1alpha3.WorkloadEntryApplyConfiguration{}
 

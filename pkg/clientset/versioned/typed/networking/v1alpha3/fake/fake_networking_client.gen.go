@@ -36,16 +36,8 @@ func (c *FakeNetworkingV1alpha3) FaultInjectionPolicies(namespace string) v1alph
 	return newFakeFaultInjectionPolicies(c, namespace)
 }
 
-func (c *FakeNetworkingV1alpha3) ServiceActivationPolicies(namespace string) v1alpha3.ServiceActivationPolicyInterface {
-	return newFakeServiceActivationPolicies(c, namespace)
-}
-
 func (c *FakeNetworkingV1alpha3) ServiceEntries(namespace string) v1alpha3.ServiceEntryInterface {
 	return newFakeServiceEntries(c, namespace)
-}
-
-func (c *FakeNetworkingV1alpha3) TransitServices(namespace string) v1alpha3.TransitServiceInterface {
-	return newFakeTransitServices(c, namespace)
 }
 
 func (c *FakeNetworkingV1alpha3) WorkloadEntries(namespace string) v1alpha3.WorkloadEntryInterface {

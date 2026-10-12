@@ -59,12 +59,8 @@ func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Networking().V1alpha3().CircuitBreakerPolicies().Informer()}, nil
 	case v1alpha3.SchemeGroupVersion.WithResource("faultinjectionpolicies"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Networking().V1alpha3().FaultInjectionPolicies().Informer()}, nil
-	case v1alpha3.SchemeGroupVersion.WithResource("serviceactivationpolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Networking().V1alpha3().ServiceActivationPolicies().Informer()}, nil
 	case v1alpha3.SchemeGroupVersion.WithResource("serviceentries"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Networking().V1alpha3().ServiceEntries().Informer()}, nil
-	case v1alpha3.SchemeGroupVersion.WithResource("transitservices"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Networking().V1alpha3().TransitServices().Informer()}, nil
 	case v1alpha3.SchemeGroupVersion.WithResource("workloadentries"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Networking().V1alpha3().WorkloadEntries().Informer()}, nil
 

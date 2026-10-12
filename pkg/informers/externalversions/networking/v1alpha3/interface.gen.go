@@ -28,12 +28,8 @@ type Interface interface {
 	CircuitBreakerPolicies() CircuitBreakerPolicyInformer
 	// FaultInjectionPolicies returns a FaultInjectionPolicyInformer.
 	FaultInjectionPolicies() FaultInjectionPolicyInformer
-	// ServiceActivationPolicies returns a ServiceActivationPolicyInformer.
-	ServiceActivationPolicies() ServiceActivationPolicyInformer
 	// ServiceEntries returns a ServiceEntryInformer.
 	ServiceEntries() ServiceEntryInformer
-	// TransitServices returns a TransitServiceInformer.
-	TransitServices() TransitServiceInformer
 	// WorkloadEntries returns a WorkloadEntryInformer.
 	WorkloadEntries() WorkloadEntryInformer
 }
@@ -59,19 +55,9 @@ func (v *version) FaultInjectionPolicies() FaultInjectionPolicyInformer {
 	return &faultInjectionPolicyInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
-// ServiceActivationPolicies returns a ServiceActivationPolicyInformer.
-func (v *version) ServiceActivationPolicies() ServiceActivationPolicyInformer {
-	return &serviceActivationPolicyInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
-}
-
 // ServiceEntries returns a ServiceEntryInformer.
 func (v *version) ServiceEntries() ServiceEntryInformer {
 	return &serviceEntryInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
-}
-
-// TransitServices returns a TransitServiceInformer.
-func (v *version) TransitServices() TransitServiceInformer {
-	return &transitServiceInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // WorkloadEntries returns a WorkloadEntryInformer.

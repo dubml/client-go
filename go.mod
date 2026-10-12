@@ -1,9 +1,9 @@
 module github.com/dubml/client-go
 
-go 1.25.0
+go 1.26.0
 
 require (
-	github.com/dubml/api v0.0.0-20260820123851-c3a7c138547d
+	github.com/dubml/api v0.0.0-20260911093830-fa669147470c
 	k8s.io/apimachinery v0.34.1
 	k8s.io/client-go v0.34.1
 	sigs.k8s.io/structured-merge-diff/v6 v6.3.0

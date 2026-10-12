@@ -69,6 +69,7 @@ generate-k8s-client:
 	# generate kube api type wrappers for dubbo types
 	@GODEBUG=gotypesalias=0 $(kubetype_gen) --input-dirs $(kube_dubbo_source_packages) --output-package $(kube_api_base_package) -h $(kube_go_header_text)
 	@$(move_generated)
+	@find pkg/apis -name '*.go' -and -not -name 'doc.go' -and -not -name '*.gen.go' -type f -exec sh -c 'mv "$$1" "$${1%.go}".gen.go' - '{}' \;
 	# generate deepcopy for kube api types
 	@$(deepcopy_gen) --output-file zz_generated.deepcopy.gen.go --go-header-file $(kube_go_header_text) $(kube_api_package_list)
 	# generate ssa for kube api types

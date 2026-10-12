@@ -22,10 +22,6 @@ type CircuitBreakerPolicyExpansion interface{}
 
 type FaultInjectionPolicyExpansion interface{}
 
-type ServiceActivationPolicyExpansion interface{}
-
 type ServiceEntryExpansion interface{}
-
-type TransitServiceExpansion interface{}
 
 type WorkloadEntryExpansion interface{}

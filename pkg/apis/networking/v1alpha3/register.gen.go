@@ -47,12 +47,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&CircuitBreakerPolicyList{},
 		&FaultInjectionPolicy{},
 		&FaultInjectionPolicyList{},
-		&ServiceActivationPolicy{},
-		&ServiceActivationPolicyList{},
 		&ServiceEntry{},
 		&ServiceEntryList{},
-		&TransitService{},
-		&TransitServiceList{},
 		&WorkloadEntry{},
 		&WorkloadEntryList{},
 	)

@@ -30,9 +30,7 @@ type NetworkingV1alpha3Interface interface {
 	RESTClient() rest.Interface
 	CircuitBreakerPoliciesGetter
 	FaultInjectionPoliciesGetter
-	ServiceActivationPoliciesGetter
 	ServiceEntriesGetter
-	TransitServicesGetter
 	WorkloadEntriesGetter
 }
 
@@ -49,16 +47,8 @@ func (c *NetworkingV1alpha3Client) FaultInjectionPolicies(namespace string) Faul
 	return newFaultInjectionPolicies(c, namespace)
 }
 
-func (c *NetworkingV1alpha3Client) ServiceActivationPolicies(namespace string) ServiceActivationPolicyInterface {
-	return newServiceActivationPolicies(c, namespace)
-}
-
 func (c *NetworkingV1alpha3Client) ServiceEntries(namespace string) ServiceEntryInterface {
 	return newServiceEntries(c, namespace)
-}
-
-func (c *NetworkingV1alpha3Client) TransitServices(namespace string) TransitServiceInterface {
-	return newTransitServices(c, namespace)
 }
 
 func (c *NetworkingV1alpha3Client) WorkloadEntries(namespace string) WorkloadEntryInterface {
